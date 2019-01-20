@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.play.waco.repository.GYMMapper">
+	<select	id="selectGYMById" resultType="gym">
+		SELECT ID, NAME, ADDR1, ADDR2, ZIPCODE, TELNO, EMAIL, MOBILENO, MASTER, STAFF, INFO
+		FROM GYM
+		WHERE ID = #{id}
+	</select>
+	
+	<insert id="insertGYM">
+		INSERT INTO GYM (NAME, ADDR1, ADDR2, ZIPCODE, TELNO, EMAIL, MOBILENO, MASTER, STAFF, INFO)
+		VALUES (#{name}, #{addr1}, #{addr2}, #{zipcode}, #{telno}, #{email}, #{mobileno}, #{master}, #{staff}, #{info})
+	</insert>
+</mapper>
