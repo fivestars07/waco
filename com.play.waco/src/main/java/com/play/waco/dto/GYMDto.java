@@ -18,6 +18,7 @@ public class GYMDto {
 	private String zipcode;
 	private String telno;
 	private String mobileno;
+	private String email;
 	private Long master;
 	private Long staff;
 	private String info;
@@ -31,6 +32,7 @@ public class GYMDto {
 				.zipcode(zipcode)
 				.telno(telno)
 				.mobileno(mobileno)
+				.email(email)
 				.master(master)
 				.staff(staff)
 				.info(info)
