@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.play.waco.repository.PlayerMapper">
+
+	<select	id="selectPlayerById" resultType="player">
+		SELECT ID, GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, WIN, LOSE, TIE
+		FROM PLAYER
+		WHERE ID = #{id}
+	</select>
+	
+	<insert id="insertPlayer">
+		INSERT INTO PLAYER (GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, WIN, LOSE, TIE)
+		VALUES (#{gym}, #{name}, #{sex}, #{ssn_front}, #{ssn_encript}, #{win}, #{lose}, #{tie})
+	</insert>
+
+</mapper>
