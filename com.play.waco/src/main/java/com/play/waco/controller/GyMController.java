@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.play.waco.dto.GYMDto;
-import com.play.waco.repository.GYMMapper;
+import com.play.waco.service.GYMService;
 
 import lombok.AllArgsConstructor;
 
@@ -13,11 +13,11 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class GyMController {
 
-	private GYMMapper gymMapper;
+	private GYMService gymService;
 	
 	@PostMapping("/gym/reg")
 	public void registerGYM(@RequestBody GYMDto dto) {
-		gymMapper.insertGYM(dto.toEntity());
+		gymService.registerGYM(dto);
 	}
 	
 }

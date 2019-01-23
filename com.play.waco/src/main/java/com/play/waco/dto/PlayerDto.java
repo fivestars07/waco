@@ -17,6 +17,7 @@ public class PlayerDto {
 	private Long sex;
 	private String ssn_front;
 	private String ssn_encript;
+	private String telno;
 	private Long win;
 	private Long lose;
 	private Long tie;
@@ -30,6 +31,7 @@ public class PlayerDto {
 				.sex(sex)
 				.ssn_front(ssn_front)
 				.ssn_encript(ssn_encript)
+				.telno(telno)
 				.win(win)
 				.lose(lose)
 				.tie(tie)

@@ -18,22 +18,24 @@ public class Player {
 	private Long sex;
 	private String ssn_front;
 	private String ssn_encript;
+	private String telno;
 	private Long win;
 	private Long lose;
 	private Long tie;
-	
+
 	@Builder
-	public Player(Long id, Long gym, String name, Long sex, String ssn_front, String ssn_encript, Long win, Long lose,
-			Long tie) {
+	public Player(Long id, Long gym, String name, Long sex, String ssn_front, String ssn_encript, String telno,
+			Long win, Long lose, Long tie) {
 		this.id = id;
 		this.gym = gym;
 		this.name = name;
 		this.sex = sex;
 		this.ssn_front = ssn_front;
 		this.ssn_encript = ssn_encript;
+		this.telno = telno;
 		this.win = win;
 		this.lose = lose;
 		this.tie = tie;
 	}
-	
+
 }
