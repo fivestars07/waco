@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-public class GyMController {
+public class GYMController {
 
 	private GYMService gymService;
 	
