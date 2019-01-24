@@ -5,14 +5,14 @@
 <mapper namespace="com.play.waco.repository.PlayerMapper">
 
 	<select	id="selectPlayerById" resultType="player">
-		SELECT ID, GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, TELNO, WIN, LOSE, TIE
+		SELECT ID, GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, WEIGHT, HEIGHT, TELNO, WIN, LOSE, TIE
 		FROM PLAYER
 		WHERE ID = #{id}
 	</select>
 	
 	<insert id="insertPlayer">
-		INSERT INTO PLAYER (GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, TELNO, WIN, LOSE, TIE)
-		VALUES (#{gym}, #{name}, #{sex}, #{ssn_front}, #{ssn_encript}, #{telno}, #{win}, #{lose}, #{tie})
+		INSERT INTO PLAYER (GYM, NAME, SEX, SSN_FRONT, SSN_ENCRIPT, WEIGHT, HEIGHT, TELNO, WIN, LOSE, TIE)
+		VALUES (#{gym}, #{name}, #{sex}, #{ssn_front}, #{ssn_encript}, #{weight}, #{height}, #{telno}, #{win}, #{lose}, #{tie})
 	</insert>
 
 </mapper>

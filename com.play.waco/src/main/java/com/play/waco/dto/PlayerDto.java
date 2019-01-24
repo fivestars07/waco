@@ -14,9 +14,11 @@ public class PlayerDto {
 	private Long id;
 	private Long gym;
 	private String name;
-	private Long sex;
+	private String sex;
 	private String ssn_front;
 	private String ssn_encript;
+	private Long weight;
+	private Long height;
 	private String telno;
 	private Long win;
 	private Long lose;
@@ -31,6 +33,8 @@ public class PlayerDto {
 				.sex(sex)
 				.ssn_front(ssn_front)
 				.ssn_encript(ssn_encript)
+				.weight(weight)
+				.height(height)
 				.telno(telno)
 				.win(win)
 				.lose(lose)
