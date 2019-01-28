@@ -11,10 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor( access = AccessLevel.PROTECTED )
 @Alias("tournament")
 public class Tournament {
-
+	
 	private int matchid;
 	private int eventid;
+	
 	private int playerid;
+	private int tournamentid;
+	private int gymid;
+	private int weight;
+	private int win;
+	private int lose;
+	private int tie;
 	
 	@Builder
 	public Tournament(int matchid, int eventid, int playerid) {
