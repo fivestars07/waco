@@ -4,10 +4,11 @@
 
 <mapper namespace="com.play.waco.repository.TournamentMapper">
 	<select id="selectMatchPlayerInfo" resultType="tournament">
-		SELECT A.ID, A.MATCHID, A.EVENTID, A.PLAYERID, A.REGDATE, B.ID, B.GYM AS GYMID, B.WEIGHT, B.WIN, B.LOSE, B.TIE 
+		SELECT A.ID, A.MATCHID, A.EVENTID, A.PLAYERID, A.WEIGHT_DIVISION, A.REGDATE, B.ID, B.GYM AS GYMID, B.WEIGHT, B.WIN, B.LOSE, B.TIE 
 		FROM MATCH_REGISTER A 
 		     INNER JOIN PLAYER B ON B.ID = A.PLAYERID 
 		WHERE A.MATCHID = #{matchid}
 		AND A.EVENTID = #{eventid}
+		ORDER BY B.GYM, A.WEIGHT_DIVISION
 	</select>
 </mapper>
