@@ -19,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 @AllArgsConstructor
 public class TournamentService {
 
+	private CommonService commonService;
 	private TournamentMapper tournamentMapper;
 	
 	/*
@@ -36,6 +37,8 @@ public class TournamentService {
 		}
 		*/
 		
+		//commonService.randomElementsRepeat();
+		
 	}
 
 	/*
@@ -47,6 +50,7 @@ public class TournamentService {
 		/* GYM 별 선수 분리 후 저장할 List */
 		Map<Integer, List<Tournament>> playerForGYM = new HashMap<Integer, List<Tournament>>();
 		List<Tournament> tempPlayer = null;
+		List<Integer> GYMsortList = new ArrayList<Integer>();
 		
 		/* for문에서 사용하는 List index 변수 */
 		int i = 0;
@@ -63,6 +67,7 @@ public class TournamentService {
 
 				if( arrayNo != 0 ) {
 
+					GYMsortList.add(mapKey);
 					playerForGYM.put(mapKey, tempPlayer);
 					mapKey++;
 
@@ -70,12 +75,13 @@ public class TournamentService {
 
 				tempPlayer = new ArrayList<Tournament>();
 				
-			} 
+			}
 
 			i++;
 			tempPlayer.add(player);
 
 			if( i == playerList.size() ) {
+				GYMsortList.add(mapKey);
 				playerForGYM.put(mapKey, tempPlayer);
 			}
 			
@@ -83,6 +89,27 @@ public class TournamentService {
 
 		}
 
+		/*
+		 * gym random 배정
+		 */
+		int[] randGYMList = commonService.randomElementsRepeat(GYMsortList);
+		
+		/*
+		 * List 소멸
+		 */
+		GYMsortList = null;
+
+		/*
+		 * 1.체급별 비교
+		 * 2.전적별 비교
+		 */
+		log.info("0번째 : {}", randGYMList.length);
+		//if( randGYMList.length >= 2 ) {
+		//	log.info("체급 : {}", tempPlayer.get(randGYMList[0]).getMatchid());
+		//}
+
+
+		
 	}
 	
 }
